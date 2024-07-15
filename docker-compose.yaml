@@ -1,0 +1,9 @@
+version: '3'
+services:
+  stt:
+    image: openvoice:v1
+    ports:
+      - "8080:8080"
+    command: ["python3","main.py"]
+    volumes:
+      - ./outputs:/opt/tiger/openvoice/output_v2
