@@ -17,3 +17,4 @@ RUN python -m unidic download
 COPY ./ /opt/tiger/OpenVoice
 ENV PYTHONPATH /opt/tiger/OpenVoice:$PYTHONPATH
 WORKDIR /opt/tiger/OpenVoice
+RUN python3 main.py

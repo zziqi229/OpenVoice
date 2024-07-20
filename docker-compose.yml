@@ -5,12 +5,13 @@ services:
     runtime: nvidia
     ports:
       - "8080:8080"
-    command: ["sleep","3600"]
+    command: ["sleep","360000"]
     environment:
-      - http_proxy=192.168.2.229:7890
-      - https_proxy=192.168.2.229:7890
-      - HTTP_PROXY=192.168.2.229:7890
-      - HTTPS_PROXY=192.168.2.229:7890
+      - http_proxy=http://192.168.0.110:7890
+      - https_proxy=http://192.168.0.110:7890
+      - HTTP_PROXY=http://192.168.0.110:7890
+      - HTTPS_PROXY=http://192.168.0.110:7890
     volumes:
-      - ./outputs:/opt/tiger/OpenVoice/output_v2
+      - ./inputs:/opt/tiger/OpenVoice/inputs_v2
+      - ./outputs:/opt/tiger/OpenVoice/outputs_v2
       - ./checkpoints_v2:/opt/tiger/OpenVoice/checkpoints_v2
